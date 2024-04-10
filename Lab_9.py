@@ -9,12 +9,12 @@ class PasswordManager:
             encoded.append(encoded_digit)
         return ''.join(encoded)
 
-    # def decoder(self, encoded):
-    #     decoded = []
-    #     for digit in encoded:
-    #         decoded_digit = str((int(digit) - 3) % 10)
-    #         decoded.append(decoded_digit)
-    #     return ''.join(decoded)
+    def decoder(self, encoded):
+        decoded = []
+        for digit in encoded:
+            decoded_digit = str((int(digit) - 3) % 10)
+            decoded.append(decoded_digit)
+        return ''.join(decoded)
 
 if __name__ == "__main__":
     password_manager = PasswordManager()
@@ -35,7 +35,6 @@ if __name__ == "__main__":
             print("Your password has been encoded and stored!\n")
 
         elif option == '2':
-            # encoded_password = input("Please enter the encoded password: ")
             decoded_password = password_manager.decoder(encoded_password)
             print("The encoded password is", encoded_password, "and the original password is", decoded_password,".\n")
 
